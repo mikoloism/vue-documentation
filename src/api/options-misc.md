@@ -4,7 +4,7 @@
 
 Explicitly declare a display name for the component.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -12,7 +12,7 @@ Explicitly declare a display name for the component.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The name of a component is used for the following:
 
@@ -36,7 +36,7 @@ Explicitly declare a display name for the component.
 
 Controls whether the default component attribute fallthrough behavior should be enabled.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -44,11 +44,11 @@ Controls whether the default component attribute fallthrough behavior should be 
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   By default, parent scope attribute bindings that are not recognized as props will "fallthrough". This means that when we have a single-root component, these bindings will be applied to the root element of the child component as normal HTML attributes. When authoring a component that wraps a target element or another component, this may not always be the desired behavior. By setting `inheritAttrs` to `false`, this default behavior can be disabled. The attributes are available via the `$attrs` instance property and can be explicitly bound to a non-root element using `v-bind`.
 
-- **Example**
+- **نمونه**
 
   <div class="options-api">
 
@@ -122,13 +122,13 @@ Controls whether the default component attribute fallthrough behavior should be 
 
   </div>
 
-- **See also** [Fallthrough Attributes](/guide/components/attrs)
+- **بیشتر در** [Fallthrough Attributes](/guide/components/attrs)
 
 ## components {#components}
 
 An object that registers components to be made available to the component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -136,7 +136,7 @@ An object that registers components to be made available to the component instan
   }
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   import Foo from './Foo.vue'
@@ -152,13 +152,13 @@ An object that registers components to be made available to the component instan
   }
   ```
 
-- **See also** [Component Registration](/guide/components/registration)
+- **بیشتر در** [Component Registration](/guide/components/registration)
 
 ## directives {#directives}
 
 An object that registers directives to be made available to the component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -166,7 +166,7 @@ An object that registers directives to be made available to the component instan
   }
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -187,4 +187,4 @@ An object that registers directives to be made available to the component instan
 
   A hash of directives to be made available to the component instance.
 
-- **See also** [Custom Directives](/guide/reusability/custom-directives)
+- **بیشتر در** [Custom Directives](/guide/reusability/custom-directives)

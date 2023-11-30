@@ -10,7 +10,7 @@ All properties listed on this page are readonly (except nested properties in `$d
 
 The object returned from the [`data`](./options-state#data) option, made reactive by the component. The component instance proxies access to the properties on its data object.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -22,7 +22,7 @@ The object returned from the [`data`](./options-state#data) option, made reactiv
 
 An object representing the component's current, resolved props.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -30,7 +30,7 @@ An object representing the component's current, resolved props.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   Only props declared via the [`props`](./options-state#props) option will be included. The component instance proxies access to the properties on its props object.
 
@@ -38,7 +38,7 @@ An object representing the component's current, resolved props.
 
 The root DOM node that the component instance is managing.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -46,7 +46,7 @@ The root DOM node that the component instance is managing.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   `$el` will be `undefined` until the component is [mounted](./options-lifecycle#mounted).
 
@@ -62,7 +62,7 @@ The root DOM node that the component instance is managing.
 
 The resolved component options used for instantiating the current component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -70,7 +70,7 @@ The resolved component options used for instantiating the current component inst
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The `$options` object exposes the resolved options for the current component and is the merge result of these possible sources:
 
@@ -89,13 +89,13 @@ The resolved component options used for instantiating the current component inst
   })
   ```
 
-- **See also** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
+- **بیشتر در** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 
 The parent instance, if the current instance has one. It will be `null` for the root instance itself.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -107,7 +107,7 @@ The parent instance, if the current instance has one. It will be `null` for the 
 
 The root component instance of the current component tree. If the current instance has no parents this value will be itself.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -119,7 +119,7 @@ The root component instance of the current component tree. If the current instan
 
 An object representing the [slots](/guide/components/slots) passed by the parent component.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -129,7 +129,7 @@ An object representing the [slots](/guide/components/slots) passed by the parent
   type Slot = (...args: any[]) => VNode[]
   ```
 
-- **Details**
+- **جزئیات**
 
   Typically used when manually authoring [render functions](/guide/extras/render-function), but can also be used to detect whether a slot is present.
 
@@ -137,13 +137,13 @@ An object representing the [slots](/guide/components/slots) passed by the parent
 
   If a slot is a [scoped slot](/guide/components/slots#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
 
-- **See also** [Render Functions - Rendering Slots](/guide/extras/render-function#rendering-slots)
+- **بیشتر در** [Render Functions - Rendering Slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
 An object of DOM elements and component instances, registered via [template refs](/guide/essentials/template-refs).
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -151,7 +151,7 @@ An object of DOM elements and component instances, registered via [template refs
   }
   ```
 
-- **See also**
+- **بیشتر در**
 
   - [Template refs](/guide/essentials/template-refs)
   - [Special Attributes - ref](./built-in-special-attributes.md#ref)
@@ -160,7 +160,7 @@ An object of DOM elements and component instances, registered via [template refs
 
 An object that contains the component's fallthrough attributes.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -168,13 +168,13 @@ An object that contains the component's fallthrough attributes.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   [Fallthrough Attributes](/guide/components/attrs) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
 
   By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc#inheritattrs) option.
 
-- **See also**
+- **بیشتر در**
 
   - [Fallthrough Attributes](/guide/components/attrs)
 
@@ -182,7 +182,7 @@ An object that contains the component's fallthrough attributes.
 
 Imperative API for creating watchers.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -210,7 +210,7 @@ Imperative API for creating watchers.
   type StopHandle = () => void
   ```
 
-- **Details**
+- **جزئیات**
 
   The first argument is the watch source. It can be a component property name string, a simple dot-delimited path string, or a getter function.
 
@@ -221,7 +221,7 @@ Imperative API for creating watchers.
   - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Watcher Debugging](/guide/extras/reactivity-in-depth#watcher-debugging).
 
-- **Example**
+- **نمونه**
 
   Watch a property name:
 
@@ -257,7 +257,7 @@ Imperative API for creating watchers.
   unwatch()
   ```
 
-- **See also**
+- **بیشتر در**
   - [Options - `watch`](/api/options-state#watch)
   - [Guide - Watchers](/guide/essentials/watchers)
 
@@ -265,7 +265,7 @@ Imperative API for creating watchers.
 
 Trigger a custom event on the current instance. Any additional arguments will be passed into the listener's callback function.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -273,7 +273,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
   }
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -286,7 +286,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
   }
   ```
 
-- **See also**
+- **بیشتر در**
 
   - [Component - Events](/guide/components/events)
   - [`emits` option](./options-state#emits)
@@ -295,7 +295,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
 
 Force the component instance to re-render.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
@@ -303,7 +303,7 @@ Force the component instance to re-render.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   This should be rarely needed given Vue's fully automatic reactivity system. The only cases where you may need it is when you have explicitly created non-reactive component state using advanced reactivity APIs.
 
@@ -311,16 +311,18 @@ Force the component instance to re-render.
 
 Instance-bound version of the global [`nextTick()`](./general#nexttick).
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentPublicInstance {
-    $nextTick(callback?: (this: ComponentPublicInstance) => void): Promise<void>
+    $nextTick(
+      callback?: (this: ComponentPublicInstance) => void
+    ): Promise<void>
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The only difference from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
 
-- **See also** [`nextTick()`](./general#nexttick)
+- **بیشتر در** [`nextTick()`](./general#nexttick)

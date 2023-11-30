@@ -4,7 +4,7 @@
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function renderToString(
@@ -13,7 +13,7 @@
   ): Promise<string>
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   import { createSSRApp } from 'vue'
@@ -43,7 +43,7 @@
 
   Most other SSR APIs on this page also optionally accept a context object. The context object can be accessed in component code via the [useSSRContext](#usessrcontext) helper.
 
-- **See also** [Guide - Server-Side Rendering](/guide/scaling-up/ssr)
+- **بیشتر در** [Guide - Server-Side Rendering](/guide/scaling-up/ssr)
 
 ## renderToNodeStream() {#rendertonodestream}
 
@@ -51,7 +51,7 @@ Renders input as a [Node.js Readable stream](https://nodejs.org/api/stream.html#
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function renderToNodeStream(
@@ -60,7 +60,7 @@ Renders input as a [Node.js Readable stream](https://nodejs.org/api/stream.html#
   ): Readable
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   // inside a Node.js http handler
@@ -77,7 +77,7 @@ Render and pipe to an existing [Node.js Writable stream](https://nodejs.org/api/
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function pipeToNodeWritable(
@@ -87,7 +87,7 @@ Render and pipe to an existing [Node.js Writable stream](https://nodejs.org/api/
   ): void
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   // inside a Node.js http handler
@@ -100,7 +100,7 @@ Renders input as a [Web ReadableStream](https://developer.mozilla.org/en-US/docs
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function renderToWebStream(
@@ -109,7 +109,7 @@ Renders input as a [Web ReadableStream](https://developer.mozilla.org/en-US/docs
   ): ReadableStream
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   // inside an environment with ReadableStream support
@@ -126,7 +126,7 @@ Render and pipe to an existing [Web WritableStream](https://developer.mozilla.or
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function pipeToWebWritable(
@@ -136,7 +136,7 @@ Render and pipe to an existing [Web WritableStream](https://developer.mozilla.or
   ): void
   ```
 
-- **Example**
+- **نمونه**
 
   This is typically used in combination with [`TransformStream`](https://developer.mozilla.org/en-US/docs/Web/API/TransformStream):
 
@@ -155,7 +155,7 @@ Renders input in streaming mode using a simple readable interface.
 
 - **Exported from `vue/server-renderer`**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function renderToSimpleStream(
@@ -170,7 +170,7 @@ Renders input in streaming mode using a simple readable interface.
   }
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   let res = ''
@@ -198,13 +198,13 @@ Renders input in streaming mode using a simple readable interface.
 
 A runtime API used to retrieve the context object passed to `renderToString()` or other server render APIs.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function useSSRContext<T = Record<string, any>>(): T | undefined
   ```
 
-- **Example**
+- **نمونه**
 
   The retrieved context can be used to attach information that is needed for rendering the final HTML (e.g. head metadata).
 

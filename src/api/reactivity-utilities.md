@@ -4,7 +4,7 @@
 
 Checks if a value is a ref object.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function isRef<T>(r: Ref<T> | unknown): r is Ref<T>
@@ -24,13 +24,13 @@ Checks if a value is a ref object.
 
 Returns the inner value if the argument is a ref, otherwise return the argument itself. This is a sugar function for `val = isRef(val) ? val.value : val`.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function unref<T>(ref: T | Ref<T>): T
   ```
 
-- **Example**
+- **نمونه**
 
   ```ts
   function useFoo(x: number | Ref<number>) {
@@ -45,7 +45,7 @@ Can be used to normalize values / refs / getters into refs (3.3+).
 
 Can also be used to create a ref for a property on a source reactive object. The created ref is synced with its source property: mutating the source property will update the ref, and vice-versa.
 
-- **Type**
+- **تایپ**
 
   ```ts
   // normalization signature (3.3+)
@@ -67,7 +67,7 @@ Can also be used to create a ref for a property on a source reactive object. The
   type ToRef<T> = T extends Ref ? T : Ref<T>
   ```
 
-- **Example**
+- **نمونه**
 
   Normalization signature (3.3+):
 
@@ -138,13 +138,13 @@ Normalizes values / refs / getters to values. This is similar to [unref()](#unre
 
 This can be used in [Composables](/guide/reusability/composables.html) to normalize an argument that can be either a value, a ref, or a getter.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function toValue<T>(source: T | Ref<T> | (() => T)): T
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   toValue(1) //       --> 1
@@ -158,9 +158,12 @@ This can be used in [Composables](/guide/reusability/composables.html) to normal
   import type { MaybeRefOrGetter } from 'vue'
 
   function useFeature(id: MaybeRefOrGetter<number>) {
-    watch(() => toValue(id), id => {
-      // react to id changes
-    })
+    watch(
+      () => toValue(id),
+      (id) => {
+        // react to id changes
+      }
+    )
   }
 
   // this composable supports any of the following:
@@ -173,7 +176,7 @@ This can be used in [Composables](/guide/reusability/composables.html) to normal
 
 Converts a reactive object to a plain object where each property of the resulting object is a ref pointing to the corresponding property of the original object. Each individual ref is created using [`toRef()`](#toref).
 
-- **Type**
+- **تایپ**
 
   ```ts
   function toRefs<T extends object>(
@@ -185,7 +188,7 @@ Converts a reactive object to a plain object where each property of the resultin
   type ToRef = T extends Ref ? T : Ref<T>
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   const state = reactive({
@@ -234,7 +237,7 @@ Converts a reactive object to a plain object where each property of the resultin
 
 Checks if an object is a proxy created by [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](./reactivity-advanced#shallowreactive) or [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
 
-- **Type**
+- **تایپ**
 
   ```ts
   function isProxy(value: unknown): boolean
@@ -244,7 +247,7 @@ Checks if an object is a proxy created by [`reactive()`](./reactivity-core#react
 
 Checks if an object is a proxy created by [`reactive()`](./reactivity-core#reactive) or [`shallowReactive()`](./reactivity-advanced#shallowreactive).
 
-- **Type**
+- **تایپ**
 
   ```ts
   function isReactive(value: unknown): boolean
@@ -256,7 +259,7 @@ Checks whether the passed value is a readonly object. The properties of a readon
 
 The proxies created by [`readonly()`](./reactivity-core#readonly) and [`shallowReadonly()`](./reactivity-advanced#shallowreadonly) are both considered readonly, as is a [`computed()`](./reactivity-core#computed) ref without a `set` function.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function isReadonly(value: unknown): boolean

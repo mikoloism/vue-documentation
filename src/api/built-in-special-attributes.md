@@ -6,7 +6,7 @@ The `key` special attribute is primarily used as a hint for Vue's virtual DOM al
 
 - **Expects:** `number | string | symbol`
 
-- **Details**
+- **جزئیات**
 
   Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed / destroyed.
 
@@ -35,7 +35,7 @@ The `key` special attribute is primarily used as a hint for Vue's virtual DOM al
 
   When `text` changes, the `<span>` will always be replaced instead of patched, so a transition will be triggered.
 
-- **See also** [Guide - List Rendering - Maintaining State with `key`](/guide/essentials/list#maintaining-state-with-key)
+- **بیشتر در** [Guide - List Rendering - Maintaining State with `key`](/guide/essentials/list#maintaining-state-with-key)
 
 ## ref {#ref}
 
@@ -43,7 +43,7 @@ Denotes a [template ref](/guide/essentials/template-refs).
 
 - **Expects:** `string | Function`
 
-- **Details**
+- **جزئیات**
 
   `ref` is used to register a reference to an element or a child component.
 
@@ -80,7 +80,7 @@ Denotes a [template ref](/guide/essentials/template-refs).
 
   `this.$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
-- **See also**
+- **بیشتر در**
   - [Guide - Template Refs](/guide/essentials/template-refs)
   - [Guide - Typing Template Refs](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
   - [Guide - Typing Component Template Refs](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
@@ -103,7 +103,7 @@ Used for binding [dynamic components](/guide/essentials/component-basics#dynamic
   </table>
   ```
 
-- **See also**
+- **بیشتر در**
 
   - [Built-in Special Element - `<component>`](/api/built-in-special-elements#component)
   - [Dynamic Components](/guide/essentials/component-basics#dynamic-components)

@@ -4,7 +4,7 @@
 
 A function that returns the initial reactive state for the component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -15,7 +15,7 @@ A function that returns the initial reactive state for the component instance.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The function is expected to return a plain JavaScript object, which will be made reactive by Vue. After the instance is created, the reactive data object can be accessed as `this.$data`. The component instance also proxies all the properties found on the data object, so `this.a` will be equivalent to `this.$data.a`.
 
@@ -25,7 +25,7 @@ A function that returns the initial reactive state for the component instance.
 
   It is **not** recommended to return objects with their own stateful behavior like browser API objects and prototype properties. The returned object should ideally be a plain object that only represents the state of the component.
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -45,13 +45,13 @@ A function that returns the initial reactive state for the component instance.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **See also** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
+- **بیشتر در** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
 
 ## props {#props}
 
 Declare the props of a component.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -76,7 +76,7 @@ Declare the props of a component.
 
   > Types are simplified for readability.
 
-- **Details**
+- **جزئیات**
 
   In Vue, all component props need to be explicitly declared. Component props can be declared in two forms:
 
@@ -95,7 +95,7 @@ Declare the props of a component.
 
   - **`validator`**: Custom validator function that takes the prop value as the sole argument. In development mode, a console warning will be thrown if this function returns a falsy value (i.e. the validation fails).
 
-- **Example**
+- **نمونه**
 
   Simple declaration:
 
@@ -125,7 +125,7 @@ Declare the props of a component.
   }
   ```
 
-- **See also**
+- **بیشتر در**
   - [Guide - Props](/guide/components/props)
   - [Guide - Typing Component Props](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
 
@@ -133,7 +133,7 @@ Declare the props of a component.
 
 Declare computed properties to be exposed on the component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -158,7 +158,7 @@ Declare computed properties to be exposed on the component instance.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The option accepts an object where the key is the name of the computed property, and the value is either a computed getter, or an object with `get` and `set` methods (for writable computed properties).
 
@@ -174,7 +174,7 @@ Declare computed properties to be exposed on the component instance.
   }
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -207,7 +207,7 @@ Declare computed properties to be exposed on the component instance.
   }
   ```
 
-- **See also**
+- **بیشتر در**
   - [Guide - Computed Properties](/guide/essentials/computed)
   - [Guide - Typing Computed Properties](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
@@ -215,7 +215,7 @@ Declare computed properties to be exposed on the component instance.
 
 Declare methods to be mixed into the component instance.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -225,13 +225,13 @@ Declare methods to be mixed into the component instance.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   Declared methods can be directly accessed on the component instance, or used in template expressions. All methods have their `this` context automatically bound to the component instance, even when passed around.
 
   Avoid using arrow functions when declaring methods, as they will not have access to the component instance via `this`.
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -250,13 +250,13 @@ Declare methods to be mixed into the component instance.
   }
   ```
 
-- **See also** [Event Handling](/guide/essentials/event-handling)
+- **بیشتر در** [Event Handling](/guide/essentials/event-handling)
 
 ## watch {#watch}
 
 Declare watch callbacks to be invoked on data change.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -285,7 +285,7 @@ Declare watch callbacks to be invoked on data change.
 
   > Types are simplified for readability.
 
-- **Details**
+- **جزئیات**
 
   The `watch` option expects an object where keys are the reactive component instance properties to watch (e.g. properties declared via `data` or `computed`) — and values are the corresponding callbacks. The callback receives the new value and the old value of the watched source.
 
@@ -300,7 +300,7 @@ Declare watch callbacks to be invoked on data change.
 
   Avoid using arrow functions when declaring watch callbacks as they will not have access to the component instance via `this`.
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {
@@ -368,13 +368,13 @@ Declare watch callbacks to be invoked on data change.
   }
   ```
 
-- **See also** [Watchers](/guide/essentials/watchers)
+- **بیشتر در** [Watchers](/guide/essentials/watchers)
 
 ## emits {#emits}
 
 Declare the custom events emitted by the component.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -388,7 +388,7 @@ Declare the custom events emitted by the component.
   type EmitValidator = (...args: unknown[]) => boolean
   ```
 
-- **Details**
+- **جزئیات**
 
   Emitted events can be declared in two forms:
 
@@ -399,7 +399,7 @@ Declare the custom events emitted by the component.
 
   Note that the `emits` option affects which event listeners are considered component event listeners, rather than native DOM event listeners. The listeners for declared events will be removed from the component's `$attrs` object, so they will not be passed through to the component's root element. See [Fallthrough Attributes](/guide/components/attrs) for more details.
 
-- **Example**
+- **نمونه**
 
   Array syntax:
 
@@ -433,7 +433,7 @@ Declare the custom events emitted by the component.
   }
   ```
 
-- **See also**
+- **بیشتر در**
   - [Guide - Fallthrough Attributes](/guide/components/attrs)
   - [Guide - Typing Component Emits](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
@@ -441,7 +441,7 @@ Declare the custom events emitted by the component.
 
 Declare exposed public properties when the component instance is accessed by a parent via template refs.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -449,7 +449,7 @@ Declare exposed public properties when the component instance is accessed by a p
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   By default, a component instance exposes all instance properties to the parent when accessed via `$parent`, `$root`, or template refs. This can be undesirable, since a component most likely has internal state or methods that should be kept private to avoid tight coupling.
 
@@ -457,7 +457,7 @@ Declare exposed public properties when the component instance is accessed by a p
 
   `expose` only affects user-defined properties - it does not filter out built-in component instance properties.
 
-- **Example**
+- **نمونه**
 
   ```js
   export default {

@@ -4,7 +4,7 @@
 
 Creates virtual DOM nodes (vnodes).
 
-- **Type**
+- **تایپ**
 
   ```ts
   // full signature
@@ -26,7 +26,7 @@ Creates virtual DOM nodes (vnodes).
 
   > Types are simplified for readability.
 
-- **Details**
+- **جزئیات**
 
   The first argument can either be a string (for native elements) or a Vue component definition. The second argument is the props to be passed, and the third argument is the children.
 
@@ -34,7 +34,7 @@ Creates virtual DOM nodes (vnodes).
 
   For convenience, the props argument can be omitted when the children is not a slots object.
 
-- **Example**
+- **نمونه**
 
   Creating native elements:
 
@@ -93,19 +93,19 @@ Creates virtual DOM nodes (vnodes).
   })
   ```
 
-- **See also** [Guide - Render Functions - Creating VNodes](/guide/extras/render-function#creating-vnodes)
+- **بیشتر در** [Guide - Render Functions - Creating VNodes](/guide/extras/render-function#creating-vnodes)
 
 ## mergeProps() {#mergeprops}
 
 Merge multiple props objects with special handling for certain props.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function mergeProps(...args: object[]): object
   ```
 
-- **Details**
+- **جزئیات**
 
   `mergeProps()` supports merging multiple props objects with special handling for the following props:
 
@@ -115,7 +115,7 @@ Merge multiple props objects with special handling for certain props.
 
   If you do not need the merge behavior and want simple overwrites, native object spread can be used instead.
 
-- **Example**
+- **نمونه**
 
   ```js
   import { mergeProps } from 'vue'
@@ -143,13 +143,13 @@ Merge multiple props objects with special handling for certain props.
 
 Clones a vnode.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function cloneVNode(vnode: VNode, extraProps?: object): VNode
   ```
 
-- **Details**
+- **جزئیات**
 
   Returns a cloned vnode, optionally with extra props to merge with the original.
 
@@ -157,7 +157,7 @@ Clones a vnode.
 
   Vnodes have special internal properties, so cloning them is not as simple as an object spread. `cloneVNode()` handles most of the internal logic.
 
-- **Example**
+- **نمونه**
 
   ```js
   import { h, cloneVNode } from 'vue'
@@ -170,7 +170,7 @@ Clones a vnode.
 
 Checks if a value is a vnode.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function isVNode(value: unknown): boolean
@@ -180,13 +180,13 @@ Checks if a value is a vnode.
 
 For manually resolving a registered component by name.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function resolveComponent(name: string): Component | string
   ```
 
-- **Details**
+- **جزئیات**
 
   **Note: you do not need this if you can import the component directly.**
 
@@ -194,7 +194,7 @@ For manually resolving a registered component by name.
 
   If the component is not found, a runtime warning will be emitted, and the name string is returned.
 
-- **Example**
+- **نمونه**
 
   <div class="composition-api">
 
@@ -228,19 +228,19 @@ For manually resolving a registered component by name.
 
   </div>
 
-- **See also** [Guide - Render Functions - Components](/guide/extras/render-function#components)
+- **بیشتر در** [Guide - Render Functions - Components](/guide/extras/render-function#components)
 
 ## resolveDirective() {#resolvedirective}
 
 For manually resolving a registered directive by name.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function resolveDirective(name: string): Directive | undefined
   ```
 
-- **Details**
+- **جزئیات**
 
   **Note: you do not need this if you can import the directive directly.**
 
@@ -248,13 +248,13 @@ For manually resolving a registered directive by name.
 
   If the directive is not found, a runtime warning will be emitted, and the function returns `undefined`.
 
-- **See also** [Guide - Render Functions - Custom Directives](/guide/extras/render-function#custom-directives)
+- **بیشتر در** [Guide - Render Functions - Custom Directives](/guide/extras/render-function#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
 For adding custom directives to vnodes.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function withDirectives(
@@ -271,11 +271,11 @@ For adding custom directives to vnodes.
   >
   ```
 
-- **Details**
+- **جزئیات**
 
   Wraps an existing vnode with custom directives. The second argument is an array of custom directives. Each custom directive is also represented as an array in the form of `[Directive, value, argument, modifiers]`. Tailing elements of the array can be omitted if not needed.
 
-- **Example**
+- **نمونه**
 
   ```js
   import { h, withDirectives } from 'vue'
@@ -296,19 +296,19 @@ For adding custom directives to vnodes.
   ])
   ```
 
-- **See also** [Guide - Render Functions - Custom Directives](/guide/extras/render-function#custom-directives)
+- **بیشتر در** [Guide - Render Functions - Custom Directives](/guide/extras/render-function#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
 For adding built-in [`v-on` modifiers](/guide/essentials/event-handling#event-modifiers) to an event handler function.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function withModifiers(fn: Function, modifiers: string[]): Function
   ```
 
-- **Example**
+- **نمونه**
 
   ```js
   import { h, withModifiers } from 'vue'
@@ -321,4 +321,4 @@ For adding built-in [`v-on` modifiers](/guide/essentials/event-handling#event-mo
   })
   ```
 
-- **See also** [Guide - Render Functions - Event Modifiers](/guide/extras/render-function#event-modifiers)
+- **بیشتر در** [Guide - Render Functions - Event Modifiers](/guide/extras/render-function#event-modifiers)

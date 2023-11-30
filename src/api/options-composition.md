@@ -4,7 +4,7 @@
 
 Provide values that can be injected by descendant components.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -12,13 +12,13 @@ Provide values that can be injected by descendant components.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   `provide` and [`inject`](#inject) are used together to allow an ancestor component to serve as a dependency injector for all its descendants, regardless of how deep the component hierarchy is, as long as they are in the same parent chain.
 
   The `provide` option should be either an object or a function that returns an object. This object contains the properties that are available for injection into its descendants. You can use Symbols as keys in this object.
 
-- **Example**
+- **نمونه**
 
   Basic usage:
 
@@ -52,13 +52,13 @@ Provide values that can be injected by descendant components.
 
   Note in the above example, the provided `msg` will NOT be reactive. See [Working with Reactivity](/guide/components/provide-inject#working-with-reactivity) for more details.
 
-- **See also** [Provide / Inject](/guide/components/provide-inject)
+- **بیشتر در** [Provide / Inject](/guide/components/provide-inject)
 
 ## inject {#inject}
 
 Declare properties to inject into the current component by locating them from ancestor providers.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -75,7 +75,7 @@ Declare properties to inject into the current component by locating them from an
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The `inject` option should be either:
 
@@ -90,7 +90,7 @@ Declare properties to inject into the current component by locating them from an
 
   Note that injected bindings are NOT reactive. This is intentional. However, if the injected value is a reactive object, properties on that object do remain reactive. See [Working with Reactivity](/guide/components/provide-inject#working-with-reactivity) for more details.
 
-- **Example**
+- **نمونه**
 
   Basic usage:
 
@@ -167,13 +167,13 @@ Declare properties to inject into the current component by locating them from an
   }
   ```
 
-- **See also** [Provide / Inject](/guide/components/provide-inject)
+- **بیشتر در** [Provide / Inject](/guide/components/provide-inject)
 
 ## mixins {#mixins}
 
 An array of option objects to be mixed into the current component.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -181,7 +181,7 @@ An array of option objects to be mixed into the current component.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options like normal instance objects, and they will be merged against the eventual options using the certain option merging logic. For example, if your mixin contains a `created` hook and the component itself also has one, both functions will be called.
 
@@ -191,7 +191,7 @@ An array of option objects to be mixed into the current component.
   In Vue 2, mixins were the primary mechanism for creating reusable chunks of component logic. While mixins continue to be supported in Vue 3, [Composable functions using Composition API](/guide/reusability/composables) is now the preferred approach for code reuse between components.
   :::
 
-- **Example**
+- **نمونه**
 
   ```js
   const mixin = {
@@ -215,7 +215,7 @@ An array of option objects to be mixed into the current component.
 
 A "base class" component to extend from.
 
-- **Type**
+- **تایپ**
 
   ```ts
   interface ComponentOptions {
@@ -223,7 +223,7 @@ A "base class" component to extend from.
   }
   ```
 
-- **Details**
+- **جزئیات**
 
   Allows one component to extend another, inheriting its component options.
 
@@ -233,7 +233,7 @@ A "base class" component to extend from.
 
   As with `mixins`, any options (except for `setup()`) will be merged using the relevant merge strategy.
 
-- **Example**
+- **نمونه**
 
   ```js
   const CompA = { ... }
@@ -257,10 +257,11 @@ A "base class" component to extend from.
     extends: Base,
     setup(props, ctx) {
       return {
-        ...Base.setup(props, ctx),
+        ...Base.setup(props, ctx)
         // local bindings
       }
     }
   }
   ```
+
   :::
