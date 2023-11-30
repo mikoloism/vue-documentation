@@ -50,13 +50,13 @@
 
 Registers a callback to be called after the component has updated its DOM tree due to a reactive state change.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onUpdated(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
   A parent component's updated hook is called after that of its child components.
 
@@ -68,7 +68,7 @@ Registers a callback to be called after the component has updated its DOM tree d
   Do not mutate component state in the updated hook - this will likely lead to an infinite update loop!
   :::
 
-- **Example**
+- **نمونه**
 
   Accessing updated DOM:
 
@@ -93,13 +93,13 @@ Registers a callback to be called after the component has updated its DOM tree d
 
 Registers a callback to be called after the component has been unmounted.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onUnmounted(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
   A component is considered unmounted after:
 
@@ -111,7 +111,7 @@ Registers a callback to be called after the component has been unmounted.
 
   **This hook is not called during server-side rendering.**
 
-- **Example**
+- **نمونه**
 
   ```vue
   <script setup>
@@ -132,13 +132,13 @@ Registers a callback to be called after the component has been unmounted.
 
 Registers a hook to be called right before the component is to be mounted.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onBeforeMount(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
   When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.
 
@@ -148,13 +148,13 @@ Registers a hook to be called right before the component is to be mounted.
 
 Registers a hook to be called right before the component is about to update its DOM tree due to a reactive state change.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onBeforeUpdate(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
   This hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify component state inside this hook.
 
@@ -164,13 +164,13 @@ Registers a hook to be called right before the component is about to update its 
 
 Registers a hook to be called right before a component instance is to be unmounted.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onBeforeUnmount(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
   When this hook is called, the component instance is still fully functional.
 
@@ -180,7 +180,7 @@ Registers a hook to be called right before a component instance is to be unmount
 
 Registers a hook to be called when an error propagating from a descendant component has been captured.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onErrorCaptured(callback: ErrorCapturedHook): void
@@ -192,7 +192,7 @@ Registers a hook to be called when an error propagating from a descendant compon
   ) => boolean | void
   ```
 
-- **Details**
+- **جزئیات**
 
   Errors can be captured from the following sources:
 
@@ -226,7 +226,7 @@ Registers a debug hook to be called when a reactive dependency has been tracked 
 
 **This hook is development-mode-only and not called during server-side rendering.**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onRenderTracked(callback: DebuggerHook): void
@@ -241,7 +241,7 @@ Registers a debug hook to be called when a reactive dependency has been tracked 
   }
   ```
 
-- **See also** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
+- **همچنین ببینید** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -249,7 +249,7 @@ Registers a debug hook to be called when a reactive dependency triggers the comp
 
 **This hook is development-mode-only and not called during server-side rendering.**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onRenderTriggered(callback: DebuggerHook): void
@@ -267,7 +267,7 @@ Registers a debug hook to be called when a reactive dependency triggers the comp
   }
   ```
 
-- **See also** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
+- **همچنین ببینید** [Reactivity in Depth](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
@@ -275,13 +275,13 @@ Registers a callback to be called after the component instance is inserted into 
 
 **This hook is not called during server-side rendering.**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onActivated(callback: () => void): void
   ```
 
-- **See also** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **همچنین ببینید** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onDeactivated() {#ondeactivated}
 
@@ -289,31 +289,31 @@ Registers a callback to be called after the component instance is removed from t
 
 **This hook is not called during server-side rendering.**
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onDeactivated(callback: () => void): void
   ```
 
-- **See also** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **همچنین ببینید** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
 Registers an async function to be resolved before the component instance is to be rendered on the server.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onServerPrefetch(callback: () => Promise<any>): void
   ```
 
-- **Details**
+- **جزئیات**
 
   If the callback returns a Promise, the server renderer will wait until the Promise is resolved before rendering the component.
 
   This hook is only called during server-side rendering can be used to perform server-only data fetching.
 
-- **Example**
+- **نمونه**
 
   ```vue
   <script setup>
@@ -338,4 +338,4 @@ Registers an async function to be resolved before the component instance is to b
   </script>
   ```
 
-- **See also** [Server-Side Rendering](/guide/scaling-up/ssr)
+- **همچنین ببینید** [Server-Side Rendering](/guide/scaling-up/ssr)
