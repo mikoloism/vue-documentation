@@ -1,34 +1,34 @@
-# Composition API: Lifecycle Hooks {#composition-api-lifecycle-hooks}
+# Composition API: چرخه زندگی و هوک‌ها {#composition-api-lifecycle-hooks}
 
 :::info Usage Note
-All APIs listed on this page must be called synchronously during the `setup()` phase of a component. See [Guide - Lifecycle Hooks](/guide/essentials/lifecycle) for more details.
+تمامی API هایی که در این صفحه فهرست شده‌اند باید به صورت همگام یا synchronously در مرحله `setup()` فراخوانی شوند. برای اطلاعات بیشتر به [Guide - Lifecycle Hooks](/guide/essentials/lifecycle) مراجعه کنید
 :::
 
 ## onMounted() {#onmounted}
 
-Registers a callback to be called after the component has been mounted.
+پس از نصب و قرارگیری کامپوننت، این تابع فراخوانی میشود.
 
-- **Type**
+- **تایپ**
 
   ```ts
   function onMounted(callback: () => void): void
   ```
 
-- **Details**
+- **جزئیات**
 
-  A component is considered mounted after:
+  مفهوم «نصب» زمانی معنا میدهد که:
 
-  - All of its synchronous child components have been mounted (does not include async components or components inside `<Suspense>` trees).
+  - همه کامپوننت های فرزند نصب شده باشند (که این برای کامپوننت های ناهمگام یا آنهایی که درون `Suspense` قرار دارند، شامل نمی شود)
 
-  - Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component's DOM tree is in-document if the application's root container is also in-document.
+  - درخت DOM هر کامپوننت به پدر خودش اضافه و نصب شده باشد. توجه داشته باشید که تنها اطمینان میدهد که درخت DOM کامپوننت به document افزوده شده است
 
-  This hook is typically used for performing side effects that need access to the component's rendered DOM, or for limiting DOM-related code to the client in a [server-rendered application](/guide/scaling-up/ssr).
+  به طور معمول، این هوک برای اجرای اثرات جانبی و عملکرد خود، نیاز به دسترسی به DOM کامپوننت‌های رندر شده دارد، یا برای محدودسازی کدهای مرتبط به DOM سمت کلاینت در یک [اپلیکیشن رندر شده در سمت سرور](/guide/scaling-up/ssr) است.
 
-  **This hook is not called during server-side rendering.**
+  **این هوک تا زمانی که رندر در سمت سرور تمام نشود، صدا زده نمی‌شود**
 
-- **Example**
+- **نمونه‌ها**
 
-  Accessing an element via template ref:
+  دسترسی به المان به وسیله تمپلیت ref:
 
   ```vue
   <script setup>
