@@ -48,7 +48,7 @@
 
 ## onUpdated() {#onupdated}
 
-Registers a callback to be called after the component has updated its DOM tree due to a reactive state change.
+این مرحله هنگامی فراخوانی می‌شود، کامپوننت در واکنش به تغییر state، درخت DOM خودش را بروز می‌نماید.
 
 - **تایپ**
 
